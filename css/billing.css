@@ -1,0 +1,11 @@
+/* HEADER */
+.c-header {
+    padding: 8px 0;
+
+    background: #222;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}

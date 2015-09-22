@@ -1,0 +1,17 @@
+/* PAGE */
+.c-page__wrapper {
+    background: #F0F0F0;
+    padding: 2em 1em;
+}
+.c-page {
+    display: block;
+    width: 21cm;
+    height: 29.7cm;
+    padding: 18mm 15mm;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 auto;
+
+    background: white;
+    box-shadow: 0 1px 3px #333;
+}
