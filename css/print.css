@@ -2,3 +2,7 @@
 {
     margin: 18mm 15mm;
 }
+
+.l-header {
+    display: none;
+}

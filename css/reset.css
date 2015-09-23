@@ -1,0 +1,18 @@
+body {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    border: 0;
+    white-space: pre-line;
+
+    overflow: hidden;
+    resize: none;
+}

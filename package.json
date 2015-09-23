@@ -1,0 +1,29 @@
+{
+  "name": "billing.html",
+  "version": "1.0.0",
+  "description": "A tool to generate a bill online",
+  "main": "index.html",
+  "dependencies": {
+    "unindentor.js": "^1.0.0",
+    "url2form.js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzi/billing.html.git"
+  },
+  "keywords": [
+    "bill",
+    "invoice",
+    "html"
+  ],
+  "author": "Thomas ZILLIOX (http://tzi.fr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tzi/billing.html/issues"
+  },
+  "homepage": "https://github.com/tzi/billing.html#readme"
+}

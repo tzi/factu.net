@@ -1,9 +1,31 @@
+
 /* PAGE */
-.c-page__wrapper {
-    background: #B0D5EE;
+.l-header {
+    padding: 1em 0;
+    background: #3292D2;
+    border-bottom: 1px solid #256D9D;
+
+    text-align: right;
+}
+
+.l-header__container {
+    position: relative;
+    display: block;
+    padding: 0 1em;
+    max-width: 21cm;
+    margin: 0 auto;
+}
+
+
+/* PAGE */
+.l-content {
+    background: #F0F0F0;
     padding: 2em 1em;
 }
-.c-page {
+
+
+/* PAGE */
+.l-page {
     display: block;
     width: 21cm;
     height: 29.7cm;

@@ -5,19 +5,31 @@
 	<title>Facture éditable</title>
 
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/billing.css">
 	<link rel="stylesheet" type="text/css" href="css/screen.css" media="not print">
 	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
-	<script type="text/javascript" src="js/billing.js"></script>
 </head>
 
 <body>
-	<div class="c-page__wrapper">
-		<div class="c-page">
-			<div class="c-header">
-				Facture
+	<form name="billing">
+		<div class="l-header">
+			<div class="l-header__container">
+				<button type="submit">Sauvegarder</button>
 			</div>
 		</div>
-	</div>
+		<div class="l-content">
+			<div class="l-page">
+				<textarea name="header" class="c-header">
+					Facture
+				</textarea>
+			</div>
+		</div>
+	</form>
+
+	<script src="js/stretchy.js"></script>
+	<script src="node_modules/unindentor.js/unindentor.js"></script>
+	<script src="node_modules/url2form.js/url2form.js"></script>
+	<script src="js/billing.js"></script>
 </body>
 </html>
