@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>url2form.js</title>
+
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="A JavaScript library to fill a form with the current url queries"/>
+    <meta name="robots" content="index,follow"/>
+
+    <!-- CSS -->
+    <style>
+        input[type="text"] {
+            display: inline-block;
+            width: 300px;
+        }
+        textarea {
+            display: inline-block;
+            width: 450px;
+            resize: vertical;
+        }
+        label {
+            display: block;
+        }
+        .label {
+            display: inline-block;
+            vertical-align: top;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1><a href="?">url2form.js</a></h1>
+<p>A JavaScript library to fill a form with the current url queries</p>
+
+<h2>A live example</h2>
+<form name="test">
+    <label>
+        <span class="label">A text input: </span>
+        <input type="text" name="text" />
+    </label>
+    <label>
+        <span class="label">A textarea: </span><br>
+        <textarea name="textarea"></textarea>
+    </label>
+    <label>
+        <input type="checkbox" name="checkbox" />
+        <span class="">A checkbox without value: </span>
+    </label>
+    <label>
+        <input type="checkbox" name="checkbox2" value="test" />
+        <span class="">A second with a value: </span>
+    </label>
+    <label>
+        <input type="radio" name="radio" />
+        <span class="">A radio without value: </span>
+    </label>
+    <label>
+        <input type="radio" name="radio" value="value" />
+        <span class="">A second with a value: </span>
+    </label>
+    
+    <button>Valider</button>
+</form>
+
+<h2>Some test cases</h2>
+<ul>
+    <li>
+        Fill the input with <a href="?text=13+*+4+%2B+2+-+8+%2F+7">some math</a>.
+    </li>
+    <li>
+        Fill the textarea with <a href="?textarea=This%0D%0Awill%0D%0Abe+%0D%0Aawesome!+%3A)">some awesomeness</a>.
+    </li>
+    <li>
+        Check <a href="?checkbox=on">the first checkbox</a>, <a href="?checkbox2=test">the second</a> or <a href="?checkbox=on&checkbox2=test">both</a>.
+    </li>
+    <li>
+        Check <a href="?radio=on">the first radio</a> or <a href="?radio=value">the second</a>.
+    </li>
+</ul>
+
+<script src="url2form.js"></script>
+<script>
+    url2form('test');
+</script>
+
+</body>
+</html>
+
