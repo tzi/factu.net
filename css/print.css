@@ -5,6 +5,7 @@
 
 .l-header,
 .c-toggle,
-.hidden\@print {
+.cf-disabled,
+.cf-hidden {
     display: none;
 }

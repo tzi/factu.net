@@ -1,5 +1,5 @@
 
-/* PAGE */
+/* HEADER */
 .l-header {
     padding: 1em 0;
     background: #3292D2;
@@ -17,7 +17,7 @@
 }
 
 
-/* PAGE */
+/* CONTENT */
 .l-content {
     background: #B0D5EE;
     padding: 2em 1em;
@@ -36,4 +36,13 @@
 
     background: white;
     box-shadow: 0 1px 3px #333;
+}
+
+.cf-disabled > td,
+.cf-disabled > th {
+    opacity: 0.5;
+}
+
+.cf-hidden {
+    display: none;
 }

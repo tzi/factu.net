@@ -4,8 +4,7 @@
   "description": "A tool to generate a bill online",
   "main": "index.html",
   "dependencies": {
-    "unindentor.js": "^1.0.0",
-    "url2form.js": "^2.0.0"
+    "content-formable.js": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
