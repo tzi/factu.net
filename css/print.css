@@ -3,6 +3,8 @@
     margin: 18mm 15mm;
 }
 
-.l-header {
+.l-header,
+.c-toggle,
+.hidden\@print {
     display: none;
 }

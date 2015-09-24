@@ -1,11 +1,39 @@
-/* HEADER */
+/* COMPONENTS */
 .c-header {
     padding: 8px 0;
 
     background: #3292D2;
     color: #FFF;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: bold;
     letter-spacing: 20px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.c-identities {
+    margin-top: 3em;
+}
+
+.c-toggle {
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+
+/* UTILS */
+.u-bold {
+    font-weight: bold;
+}
+
+.table-definition th {
+    text-align: left;
+}
+
+.table-definition td {
+    text-align: right;
+}
+
+.numeric {
+    text-align: right;
 }

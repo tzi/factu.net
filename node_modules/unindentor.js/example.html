@@ -8,17 +8,21 @@
 </head>
 <body>
     <div class="main">
-        <div class="content">
+        <form class="content" name="demo">
             <textarea class="unindent" style="display: block; width: 100%">
                 .main {
                     max-width: 980px;
                 }
             </textarea>
-        </div>
+            <button type="submit">Unindent it!</button>
+        </form>
     </div>
 <script src="unindentor.js"></script>
 <script>
-    unindentor.unindentElementList('.unindent');
+    document.forms['demo'].addEventListener('submit', function(e) {
+        e.preventDefault();
+        unindentor.unindentElementList('.unindent');
+    })
 </script>
 </body>
 </html>

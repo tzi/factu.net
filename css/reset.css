@@ -1,3 +1,7 @@
+html {
+    font-family: Georgia,Times,Times New Roman,serif;
+}
+
 body {
     box-sizing: border-box;
 }
@@ -13,6 +17,36 @@ textarea {
     border: 0;
     white-space: pre-line;
 
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    text-transform: inherit;
+    text-align: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+
     overflow: hidden;
     resize: none;
+}
+
+th > textarea {
+    white-space: nowrap;
+}
+
+table {
+    width: 100%;
+    margin-top: 3em;
+    border-collapse: collapse;
+
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 5px;
+    border: 1px solid #3292D2;
+}
+
+th {
+    background: #B0D5EE;
 }

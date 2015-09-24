@@ -49,16 +49,18 @@ var _ = self.Stretchy = {
 		
 		if (type == "textarea") {
 			element.style.height = "0";
-
 			if (cs.boxSizing == "border-box") {
 				offset = element.offsetHeight;
 			}
 			else if (cs.boxSizing == "content-box") {
 				offset = -element.clientHeight;
 			}
+			element.style.height = element.scrollHeight + offset + "px";
 
-			var lineHeight = parseInt(cs.lineHeight);
-			element.style.height = element.scrollHeight + offset - lineHeight + "px";
+			element.style.width = "100%";
+			if (element.scrollWidth > element.clientWidth) {
+				element.style.width = element.scrollWidth + "px";
+			}
 		}
 		else if(type == "input") {
 			element.style.width = "0";

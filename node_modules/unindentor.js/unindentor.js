@@ -2,7 +2,7 @@
     if (typeof define === 'function' && define.amd) {
         define([], factory);
     } else {
-        root.unindentor = factory(root.b);
+        root.unindentor = factory();
     }
 }(this, function () {
     'use strict';
