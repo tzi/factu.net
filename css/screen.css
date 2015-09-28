@@ -38,9 +38,10 @@
     box-shadow: 0 1px 3px #333;
 }
 
-.cf-disabled > td,
-.cf-disabled > th {
+.cf-disabled > * {
     opacity: 0.5;
+    background-color: #B0D5EE;
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 15px, white 15px, white 30px);
 }
 
 .cf-hidden {
