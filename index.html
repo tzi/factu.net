@@ -56,7 +56,7 @@
 								<th data-cf-editable="order-label">N° de commande</th>
 								<td data-cf-editable="order-value"></td>
 							</tr>
-							<tr>
+							<tr data-cf-if="date-value">
 								<th>Date</th>
 								<td data-cf-editable="date-value">23 septembre 2015</td>
 							</tr>
@@ -79,11 +79,23 @@
 						<th data-cf-editable="cost-label">Prix Unitaire</th>
 						<th data-cf-editable="price-label">Prix</th>
 					</tr>
-					<tr>
-						<td data-cf-editable="description-value">Theière</td>
-						<td data-cf-editable="quantity-value" class="numeric">2</td>
-						<td data-cf-editable="cost-value" class="numeric">200€</td>
+					<tr data-cf-if="description-value[1]">
+						<td data-cf-editable="description-value[1]">Theière</td>
+						<td data-cf-editable="quantity-value[1]" class="numeric">2</td>
+						<td data-cf-editable="cost-value[1]" class="numeric">200€</td>
 						<td class="numeric">400€</td>
+					</tr>
+					<tr data-cf-if="description-value[1] description-value[2]">
+						<td data-cf-editable="description-value[2]"></td>
+						<td data-cf-editable="quantity-value[2]" class="numeric"></td>
+						<td data-cf-editable="cost-value[s2]" class="numeric"></td>
+						<td class="numeric"></td>
+					</tr>
+					<tr data-cf-if="description-value[2] description-value[3]">
+						<td data-cf-editable="description-value[3]"></td>
+						<td data-cf-editable="quantity-value[3]" class="numeric"></td>
+						<td data-cf-editable="cost-value[3]" class="numeric"></td>
+						<td class="numeric"></td>
 					</tr>
 				</table>
 			</div>
