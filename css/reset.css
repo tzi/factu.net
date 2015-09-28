@@ -30,6 +30,10 @@ textarea {
     resize: none;
 }
 
+textarea:focus {
+    outline: none;
+}
+
 th > textarea {
     white-space: nowrap;
 }

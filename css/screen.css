@@ -38,10 +38,14 @@
     box-shadow: 0 1px 3px #333;
 }
 
-.cf-disabled > * {
-    opacity: 0.5;
-    background-color: #B0D5EE;
+.cf-disabled {
+    color: #888888;
+    background-color: #DBECF7;
     background-image: repeating-linear-gradient(135deg, transparent, transparent 15px, white 15px, white 30px);
+}
+
+.cf-disabled * {
+    background: transparent;
 }
 
 .cf-hidden {
