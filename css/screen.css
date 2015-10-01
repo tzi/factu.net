@@ -38,10 +38,17 @@
     box-shadow: 0 1px 3px #333;
 }
 
+[data-cf-if] {
+    transition: all 0.5s ease-in;
+    background-position: 3em 0;
+}
+
 .cf-disabled {
     color: #888888;
     background-color: #DBECF7;
     background-image: repeating-linear-gradient(135deg, transparent, transparent 15px, white 15px, white 30px);
+    background-position: 0 0;
+    transition-timing-function: ease-out;
 }
 
 .cf-disabled * {
