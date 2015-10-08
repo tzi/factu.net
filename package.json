@@ -1,5 +1,5 @@
 {
-  "name": "billing.html",
+  "name": "Factu",
   "version": "1.0.0",
   "description": "A tool to generate a bill online",
   "main": "index.html",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tzi/billing.html.git"
+    "url": "git+https://bitbucket.org/tzi/factu"
   },
   "keywords": [
     "bill",
@@ -20,9 +20,6 @@
     "html"
   ],
   "author": "Thomas ZILLIOX (http://tzi.fr)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tzi/billing.html/issues"
-  },
-  "homepage": "https://github.com/tzi/billing.html#readme"
+  "license": "Proprietary",
+  "homepage": "http://factu.net"
 }
