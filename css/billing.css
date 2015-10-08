@@ -26,6 +26,32 @@
     font-weight: bold;
 }
 
+
+/* TABLE */
+th,
+td {
+    padding: 5px;
+    border: 1px solid #3292D2;
+}
+
+th,
+.bill-highlight {
+    background: #B0D5EE;
+    font-weight: bold;
+}
+
+td {
+    border-width: 1px 0;
+}
+
+td:first-child {
+    border-left-width: 1px;
+}
+
+td:last-child {
+    border-right-width: 1px;
+}
+
 .table-definition th {
     text-align: left;
 }
@@ -34,6 +60,20 @@
     text-align: right;
 }
 
-.numeric {
+.bill-numeric,
+.bill-innerlabel {
     text-align: right;
+}
+
+.bill-setting {
+    color: grey;
+    text-align: center;
+}
+
+.bill-innerlabel {
+    border-left-width: 1px;
+}
+
+.bill-empty.bill-empty {
+    border-width: 0;
 }

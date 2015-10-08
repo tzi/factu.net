@@ -60,13 +60,13 @@
 								<th>Date</th>
 								<td data-cf-editable="date-value">23 septembre 2015</td>
 							</tr>
-							<tr data-cf-if="date-value  payment-value">
+							<tr data-cf-if="date-value payment-value">
 								<th>Date d'échéance</th>
 								<td data-cf-editable="payment-value">23 octobre 2015</td>
 							</tr>
 							<tr>
 								<th>Net à payer</th>
-								<td></td>
+								<td data-bill="total"></td>
 							</tr>
 						</table>
 					</div>
@@ -76,29 +76,44 @@
 					<tr>
 						<th data-cf-editable="description-label" width="50%">Prestation</th>
 						<th data-cf-editable="quantity-label">Quantité</th>
-						<th data-cf-editable="cost-label">Prix Unitaire</th>
-						<th data-cf-editable="price-label">Prix</th>
+						<th data-cf-editable="unit-price-label">Prix Unitaire</th>
+						<th data-cf-editable="price-label" colspan="2">Prix HT</th>
 					</tr>
-					<tr data-cf-if="description-value[1]">
+					<tr data-bill="line" data-cf-if="description-value[1]">
 						<td data-cf-editable="description-value[1]">Theière</td>
-						<td data-cf-editable="quantity-value[1]" class="numeric">2</td>
-						<td data-cf-editable="cost-value[1]" class="numeric">200€</td>
-						<td class="numeric">400€</td>
+						<td data-cf-editable="quantity-value[1]">2</td>
+						<td data-cf-editable="unit-price-value[1]">200€</td>
+						<td data-bill="line-total" colspan="2">400€</td>
 					</tr>
-					<tr data-cf-if="description-value[1] description-value[2]">
+					<tr data-bill="line" data-cf-if="description-value[1] description-value[2]">
 						<td data-cf-editable="description-value[2]"></td>
-						<td data-cf-editable="quantity-value[2]" class="numeric"></td>
-						<td data-cf-editable="cost-value[2]" class="numeric"></td>
-						<td class="numeric"></td>
+						<td data-cf-editable="quantity-value[2]"></td>
+						<td data-cf-editable="unit-price-value[2]"></td>
+						<td data-bill="line-total" colspan="2"></td>
 					</tr>
-					<tr data-cf-if="description-value[2] description-value[3]">
+					<tr data-bill="line" data-cf-if="description-value[2] description-value[3]">
 						<td data-cf-editable="description-value[3]"></td>
-						<td data-cf-editable="quantity-value[3]" class="numeric"></td>
-						<td data-cf-editable="cost-value[3]" class="numeric"></td>
-						<td class="numeric"></td>
+						<td data-cf-editable="quantity-value[3]"></td>
+						<td data-cf-editable="unit-price-value[3]"></td>
+						<td data-bill="line-total" colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="bill-empty" rowspan="4"></td>
+					</tr>
+					<tr data-cf-if="VAT">
+						<td class="bill-innerlabel" colspan="2">Total HT</td>
+						<td data-bill="totalExVAT" colspan="2">35€</td>
+					</tr>
+					<tr data-cf-if="VAT">
+						<td class="bill-innerlabel" colspan="2">TVA</td>
+						<td data-bill="VAT">35€</td>
+						<td data-cf-editable="VAT" class="bill-setting">20%</td>
+					</tr>
+					<tr>
+						<td class="bill-innerlabel bill-highlight" colspan="2">Total TTC</td>
+						<td data-bill="total" class="bill-highlight" colspan="2">35€</td>
 					</tr>
 				</table>
-			</div>
 			</div>
 		</div>
 	</form>
