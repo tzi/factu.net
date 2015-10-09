@@ -15,6 +15,15 @@
     margin-top: 2em;
 }
 
+.c-identities > *:last-child {
+    margin-top: 4em;
+}
+
+.c-description {
+    padding: 5px;
+    margin-top: 4em;
+}
+
 .c-toggle {
     position: absolute;
     transform: translateX(-100%);
@@ -22,7 +31,7 @@
 
 .c-terms__title {
     padding: 5px;
-    margin-top: 6em;
+    margin-top: 9em;
     margin-bottom: 1em;
     border-bottom: 1px solid #3292D2;
 
@@ -34,14 +43,8 @@
 }
 
 .c-terms__body {
-    font-size: 12px;
+    font-size: 14px;
     color: #555;
-}
-
-
-/* UTILS */
-.u-bold {
-    font-weight: bold;
 }
 
 
@@ -93,4 +96,17 @@ td:last-child {
 
 .bill-empty.bill-empty {
     border-width: 0;
+}
+
+
+/* UTILS */
+.u-bold {
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.u-info {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 0.5em;
 }

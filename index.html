@@ -21,11 +21,12 @@
 		</div>
 		<div class="l-content">
 			<div class="l-page">
-				<div class="c-header" data-cf-editable="header">
+				<div class="c-header">
 					Facture
 				</div>
 				<div class="c-identities grid">
 					<div class="cell-6">
+						<div class="u-info">&#9727; Le prestataire</div>
 						<div data-cf-editable="you-name" class="u-bold">
 							StarBuro
 						</div>
@@ -38,6 +39,7 @@
 						</div>
 					</div>
 					<div class="cell-6">
+						<div class="u-info">&#9698; Le client</div>
 						<div data-cf-editable="customer-name" class="u-bold">
 							DUPOND SARL
 						</div>
@@ -49,19 +51,19 @@
 
 						<table class="table-definition">
 							<tr>
-								<th data-cf-editable="number-label" width="50%">N° de Facture</th>
+								<th width="50%">N° de Facture</th>
 								<td data-cf-editable="number-value" colspan="2">418</td>
 							</tr>
-							<tr data-cf-if="order-value">
-								<th data-cf-editable="order-label">N° de commande</th>
-								<td data-cf-editable="order-value" colspan="2"></td>
+							<tr data-cf-if="reference-value">
+								<th data-cf-editable="reference-label">N° de commande</th>
+								<td data-cf-editable="reference-value" colspan="2"></td>
 							</tr>
 							<tr>
 								<th>Date</th>
 								<td data-bill="date" colspan="2">23 septembre 2015</td>
 							</tr>
 							<tr class="bill-setting">
-								<th>Jours avant échéance</th>
+								<th>Délai de paiement</th>
 								<td data-cf-editable="days-value">30 jours</td>
 							</tr>
 							<tr data-cf-if="days-value">
@@ -75,13 +77,17 @@
 						</table>
 					</div>
 				</div>
+				<div class="c-description" data-cf-if="description" data-cf-editable="description">
+					Facture correspondant à la commande passé le 10 septembre.<br>
+					Bonne réception.
+				</div>
 
 				<table>
 					<tr>
-						<th data-cf-editable="description-label" width="50%">Prestation</th>
+						<th width="50%">Prestation</th>
 						<th data-cf-editable="quantity-label">Quantité</th>
 						<th data-cf-editable="unit-price-label">Prix Unitaire</th>
-						<th data-cf-editable="price-label" colspan="2">Prix HT</th>
+						<th data-cf-editable="price-label" colspan="2">Prix</th>
 					</tr>
 					<tr data-bill="line" data-cf-if="description-value[1]">
 						<td data-cf-editable="description-value[1]">Theière</td>
@@ -122,11 +128,11 @@
 					</tr>
 				</table>
 				<div class="c-terms" data-cf-if="terms-body">
-					<div class="c-terms__title" data-cf-editable="terms-title">Termes</div>
+					<div class="c-terms__title">Termes</div>
 					<div class="c-terms__body" data-cf-editable="terms-body">
 						En conformité avec l’article L 441-6 du Code de commerce :
-						* Tout règlement effectué après la date d'échéance donnera lieu à l'application de pénalités de retard : 40€ forfaitaire plus 1,5% de la facture totale par semaine de retard.
-						* Les pénalités de retard sont exigibles sans qu’un rappel soit nécessaire.
+						- Tout règlement effectué après la date d'échéance donnera lieu à l'application de pénalités de retard : 40€ forfaitaire plus 1,5% de la facture totale par semaine de retard.
+						- Les pénalités de retard sont exigibles sans qu’un rappel soit nécessaire.
 					</div>
 				</div>
 			</div>
@@ -134,7 +140,7 @@
 	</form>
 
 	<script src="js/stretchy.js"></script>
-	<script src="node_modules/content-formable.js/build/content-formable.min.js"></script>
+	<script src="node_modules/content-formable.js/build/content-formable.js"></script>
 	<script src="js/billing.js"></script>
 </body>
 </html>

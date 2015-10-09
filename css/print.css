@@ -10,3 +10,7 @@
 .cf-hidden {
     display: none;
 }
+
+textarea {
+    box-shadow: none;
+}

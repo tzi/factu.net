@@ -49,10 +49,7 @@ var _ = self.Stretchy = {
 		
 		if (type == "textarea") {
 			element.style.height = "0";
-			if (cs.boxSizing == "border-box") {
-				offset = element.offsetHeight;
-			}
-			else if (cs.boxSizing == "content-box") {
+			if (cs.boxSizing == "content-box") {
 				offset = -element.clientHeight;
 			}
 			element.style.height = element.scrollHeight + offset + "px";
