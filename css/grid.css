@@ -1,59 +1,47 @@
 .grid {
     display: table;
+    table-layout: fixed;
     width: 100%;
-    letter-spacing: -2em;
 }
 
-.cell-1,
-.cell-2,
-.cell-3,
-.cell-4,
-.cell-5,
-.cell-6,
-.cell-7,
-.cell-8,
-.cell-9,
-.cell-10,
-.cell-11,
-.cell-12 {
-    display: inline-block;
+.grid > * {
+    display: table-cell;
     vertical-align: top;
-    letter-spacing: normal;
 }
 
 .cell-1 {
-    width: 8.3333%;
+    width: 1pt;
 }
 .cell-2 {
-    width: 16.6667%;
+    width: 2pt;
 }
 .cell-3 {
-    width: 25%;
+    width: 3pt;
 }
 .cell-4 {
-    width: 33.3333%;
+    width: 4pt;
 }
 .cell-5 {
-    width: 41.6667%;
+    width: 5pt;
 }
 .cell-6 {
-    width: 50%;
+    width: 6pt;
 }
 .cell-7 {
-    width: 58.3333%;
+    width: 7pt;
 }
 .cell-8 {
-    width: 66.6667%;
+    width: 8pt;
 }
 .cell-9 {
-    width: 75%;
+    width: 9pt;
 }
 .cell-10 {
-    width: 83.3333%;
+    width: 10pt;
 }
 .cell-11 {
-    width: 91.6667%;
+    width: 11pt;
 }
 .cell-12 {
-    width: 100%;
+    width: 12pt;
 }

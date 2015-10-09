@@ -12,12 +12,30 @@
 }
 
 .c-identities {
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 .c-toggle {
     position: absolute;
     transform: translateX(-100%);
+}
+
+.c-terms__title {
+    padding: 5px;
+    margin-top: 6em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #3292D2;
+
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.c-terms__body {
+    font-size: 12px;
+    color: #555;
 }
 
 
