@@ -28,7 +28,7 @@
 .l-page {
     display: block;
     width: 21cm;
-    height: 29.7cm;
+    min-height: 29.7cm;
     padding: 18mm 15mm;
     border: 1px solid #ccc;
     border-radius: 3px;

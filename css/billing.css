@@ -32,7 +32,6 @@
 .c-terms__title {
     padding: 5px;
     margin-top: 9em;
-    margin-bottom: 1em;
     border-bottom: 1px solid #3292D2;
 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -43,6 +42,7 @@
 }
 
 .c-terms__body {
+    padding: 1em 0;
     font-size: 14px;
     color: #555;
 }
