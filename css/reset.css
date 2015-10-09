@@ -14,7 +14,8 @@ body {
 
 textarea {
     width: 100%;
-    padding: 0;
+    min-height: 2em;
+    padding: 5px;
     border: 0;
     white-space: pre-line;
 
@@ -26,12 +27,14 @@ textarea {
     letter-spacing: inherit;
     word-spacing: inherit;
 
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2) inset;
+    transition: box-shadow 0.3s ease;
     overflow: hidden;
     resize: none;
 }
 
+textarea:hover,
 textarea:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) inset;
     outline: none;
 }
 
@@ -45,4 +48,8 @@ table {
     border-collapse: collapse;
 
     font-size: 14px;
+}
+
+td {
+    vertical-align: top;
 }

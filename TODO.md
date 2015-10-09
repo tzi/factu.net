@@ -1,6 +1,10 @@
 TODO
 ======
 
+ * [ ] Required fields
+ * [ ] Explanations on fields
+ * [ ] Explicit marker on editable fields
+
 Date
 ------
 
