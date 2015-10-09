@@ -50,23 +50,27 @@
 						<table class="table-definition">
 							<tr>
 								<th data-cf-editable="number-label" width="50%">N° de Facture</th>
-								<td data-cf-editable="number-value">418</td>
+								<td data-cf-editable="number-value" colspan="2">418</td>
 							</tr>
 							<tr data-cf-if="order-value">
 								<th data-cf-editable="order-label">N° de commande</th>
-								<td data-cf-editable="order-value"></td>
+								<td data-cf-editable="order-value" colspan="2"></td>
 							</tr>
-							<tr data-cf-if="date-value">
+							<tr>
 								<th>Date</th>
-								<td data-cf-editable="date-value">23 septembre 2015</td>
+								<td data-bill="date" colspan="2">23 septembre 2015</td>
 							</tr>
-							<tr data-cf-if="date-value payment-value">
+							<tr class="bill-setting">
+								<th>Jours avant échéance</th>
+								<td data-cf-editable="days-value">30 jours</td>
+							</tr>
+							<tr data-cf-if="days-value">
 								<th>Date d'échéance</th>
-								<td data-cf-editable="payment-value">23 octobre 2015</td>
+								<td data-bill="payment">23 octobre 2015</td>
 							</tr>
 							<tr>
 								<th>Net à payer</th>
-								<td data-bill="total"></td>
+								<td data-bill="total" colspan="2"></td>
 							</tr>
 						</table>
 					</div>
@@ -98,35 +102,31 @@
 						<td data-bill="line-total" colspan="2"></td>
 					</tr>
 					<tr>
-						<td class="bill-empty" rowspan="4"></td>
+						<td class="bill-empty" rowspan="5"></td>
 					</tr>
 					<tr data-cf-if="VAT">
 						<td class="bill-innerlabel" colspan="2">Total HT</td>
-						<td data-bill="totalExVAT" colspan="2">35€</td>
+						<td data-bill="totalExVAT">35€</td>
+					</tr>
+					<tr data-cf-if="VAT" class="bill-setting">
+						<td class="bill-innerlabel" colspan="2">Taux de TVA</td>
+						<td data-cf-editable="VAT">20%</td>
 					</tr>
 					<tr data-cf-if="VAT">
 						<td class="bill-innerlabel" colspan="2">TVA</td>
 						<td data-bill="VAT">35€</td>
-						<td data-cf-editable="VAT" class="bill-setting">20%</td>
 					</tr>
 					<tr>
 						<td class="bill-innerlabel bill-highlight" colspan="2">Total TTC</td>
-						<td data-bill="total" class="bill-highlight" colspan="2">35€</td>
+						<td data-bill="total" class="bill-highlight">35€</td>
 					</tr>
 				</table>
 				<div class="c-terms" data-cf-if="terms-body">
 					<div class="c-terms__title" data-cf-editable="terms-title">Termes</div>
 					<div class="c-terms__body" data-cf-editable="terms-body">
-						En conformité de l’article L 441-6 du Code de commerce :<br>
-						* La facture est payable sous 30 jours.<br>
-						* Pas d’escompte pour paiement anticipé.<br>
-						* Tout règlement effectué après expiration de ce délai donnera lieu, à titre de pénalité de retard, à l’application d’un intérêt égal à celui appliqué par la Banque Centrale Européenne à son opération de refinancement la plus récente, majoré de 10 points de pourcentage, ainsi qu'à une indemnité forfaitaire pour frais de recouvrement d'un montant de 40 Euros.<br>
-						* Les pénalités de retard sont exigibles sans qu’un rappel soit nécessaire.<br>
-						<br>
-						Informations concernant les droits d'exploitation :<br>
-						* Le prestataire ne cède que les droits d’exploitation de la création limités aux termes du présent document.<br>
-						* Le prestataire reste propriétaire de l’intégralité des créations tant que la prestation n’est pas entièrement réglée.<br>
-						* Toute utilisation sortant du cadre initialement prévu dans ce devis est interdite; sauf autorisation expresse et écrite du prestataire.<br>
+						En conformité avec l’article L 441-6 du Code de commerce :
+						* Tout règlement effectué après la date d'échéance donnera lieu à l'application de pénalités de retard : 40€ forfaitaire plus 1,5% de la facture totale par semaine de retard.
+						* Les pénalités de retard sont exigibles sans qu’un rappel soit nécessaire.
 					</div>
 				</div>
 			</div>

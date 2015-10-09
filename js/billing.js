@@ -9,13 +9,35 @@ var bill = (function() {
   };
 
   function init() {
+    initDate();
     update();
   }
 
   function update() {
+    updateDate();
     updateTotal();
   }
 
+  // DATE DISPLAY
+  function initDate() {
+    setComputedValue(toLongFrenchFormat(new Date()), 'date');
+  }
+
+  function updateDate() {
+    setComputedValue(toLongFrenchFormat(getPaymentDate()), 'payment');
+  }
+
+  function getPaymentDate() {
+    var paymentDate = new Date();
+    var days = parseFloat(getUserValue('days'));
+    if (! days) {
+      return false;
+    }
+    paymentDate.setDate(paymentDate.getDate() + days);
+    return paymentDate;
+  }
+
+  // BILL CALCULATION
   function updateTotal() {
     var lines = getElementsByRole('line');
     var totalExVAT = lines.reduce(function(sum, line) {
@@ -53,6 +75,7 @@ var bill = (function() {
     return total;
   }
 
+  // DOM Access
   function getUserValue(name, context) {
     context = context || document;
     var element = context.querySelector('[data-cf-editable^="' + name + '"]');
@@ -62,7 +85,11 @@ var bill = (function() {
   function setComputedValue(value, role, context) {
     var elements = getElementsByRole(role, context);
     for (var i=0; i<elements.length; i++) {
-      elements[i].innerHTML = value;
+      if (elements[i].children.length) {
+        elements[i].children[0].value = value;
+      } else {
+        elements[i].innerHTML = value;
+      }
     }
   }
 
@@ -72,11 +99,21 @@ var bill = (function() {
     return Array.prototype.slice.call(elements, 0);
   }
 
+  // DISPLAY FORMAT
   function toCurrency(price) {
     if (typeof price != 'number' || isNaN(price)) {
       return '';
     }
     return price + '€';
+  }
+
+  function toLongFrenchFormat(date) {
+    if (! date || ! date instanceof Date) {
+      return '';
+    }
+    var months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+    var day = date.getDate();
+    return day + " " + months[date.getMonth()] + " " + date.getFullYear();
   }
 })();
 

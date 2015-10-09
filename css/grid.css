@@ -1,47 +1,46 @@
-.grid {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .grid > * {
-    display: table-cell;
-    vertical-align: top;
+    float: left;
 }
 
 .cell-1 {
-    width: 1pt;
+    width: 8.3333%;
 }
 .cell-2 {
-    width: 2pt;
+    width: 16.6667%;
 }
 .cell-3 {
-    width: 3pt;
+    width: 25%;
 }
 .cell-4 {
-    width: 4pt;
+    width: 33.3333%;
 }
 .cell-5 {
-    width: 5pt;
+    width: 41.6667%;
 }
 .cell-6 {
-    width: 6pt;
+    width: 50%;
 }
 .cell-7 {
-    width: 7pt;
+    width: 58.3333%;
 }
 .cell-8 {
-    width: 8pt;
+    width: 66.6667%;
 }
 .cell-9 {
-    width: 9pt;
+    width: 75%;
 }
 .cell-10 {
-    width: 10pt;
+    width: 83.3333%;
 }
 .cell-11 {
-    width: 11pt;
+    width: 91.6667%;
 }
 .cell-12 {
-    width: 12pt;
+    width: 100%;
 }
