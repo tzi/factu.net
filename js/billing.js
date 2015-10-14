@@ -29,7 +29,7 @@ var bill = (function() {
 
   function getPaymentDate() {
     var paymentDate = new Date();
-    var days = parseFloat(getUserValue('days'));
+    var days = getUserValue('days');
     if (! days) {
       return false;
     }
@@ -48,14 +48,18 @@ var bill = (function() {
       return sum;
     }, 0);
     setComputedValue(toCurrency(totalExVAT), 'totalExVAT');
+
     var VAT = updateVAT(totalExVAT);
     var total = totalExVAT + VAT;
     setComputedValue(toCurrency(total), 'total');
 
+    var AmountPaid = getUserValue('amount-paid');
+    var toPaid = total - AmountPaid;
+    setComputedValue(toCurrency(toPaid), 'to-paid');
   }
 
   function updateVAT(totalExVAT) {
-    var percentVAT = parseFloat(getUserValue('VAT')) / 100;
+    var percentVAT = getUserValue('VAT') / 100;
     var VAT = percentVAT * totalExVAT;
     setComputedValue(toCurrency(VAT), 'VAT');
     if (!VAT) {
@@ -69,7 +73,7 @@ var bill = (function() {
     if (!line.classList.contains('cf-disabled') && !line.classList.contains('cf-hidden')) {
       var quantity = getUserValue('quantity-value', line);
       var price = getUserValue('unit-price-value', line);
-      total = parseFloat(quantity) * parseFloat(price);
+      total = quantity * price;
     }
     setComputedValue(toCurrency(total), 'line-total', line);
     return total;
@@ -79,7 +83,8 @@ var bill = (function() {
   function getUserValue(name, context) {
     context = context || document;
     var element = context.querySelector('[data-cf-editable^="' + name + '"]');
-    return element.children[0].value;
+    var value = parseFloat(element.children[0].value);
+    return value;
   }
 
   function setComputedValue(value, role, context) {
