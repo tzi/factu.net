@@ -27,15 +27,8 @@ textarea {
     letter-spacing: inherit;
     word-spacing: inherit;
 
-    transition: box-shadow 0.3s ease;
     overflow: hidden;
     resize: none;
-}
-
-textarea:hover,
-textarea:focus {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) inset;
-    outline: none;
 }
 
 th > textarea {

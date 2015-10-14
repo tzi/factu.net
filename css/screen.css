@@ -2,8 +2,8 @@
 /* HEADER */
 .l-header {
     padding: 1em 0;
-    background: #3292D2;
-    border-bottom: 1px solid #256D9D;
+    background: #F5F5F5;
+    border-bottom: 1px solid #E5E5E5;
 
     text-align: right;
 }
@@ -19,7 +19,6 @@
 
 /* CONTENT */
 .l-content {
-    background: #B0D5EE;
     padding: 2em 1em;
 }
 
@@ -30,13 +29,30 @@
     width: 21cm;
     min-height: 29.7cm;
     padding: 18mm 15mm;
-    border: 1px solid #ccc;
+    border: 1px solid #D8D8D8;
     border-radius: 3px;
     margin: 0 auto;
 
     background: white;
-    box-shadow: 0 1px 3px #333;
 }
+
+.l-page:hover textarea {
+    animation: editable 5s;
+}
+
+.l-page textarea:hover,
+.l-page textarea:focus {
+    background: #FCF8E3 !important;
+}
+
+@keyframes editable {
+    0% { background: transparent; }
+    20% { background: #FCF8E3 }
+    70% { background: #FCF8E3 }
+    90% { background: transparent; }
+}
+
+
 
 [data-cf-if] {
     transition: all 0.5s ease-in;
@@ -45,8 +61,7 @@
 
 .cf-disabled {
     color: #888888;
-    background-color: #DBECF7;
-    background-image: repeating-linear-gradient(135deg, transparent, transparent 15px, white 15px, white 30px);
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 15px, #DBECF7 15px, #DBECF7 30px);
     background-position: 0 0;
     transition-timing-function: ease-out;
 }
