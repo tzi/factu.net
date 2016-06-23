@@ -54,7 +54,11 @@ var bill = (function() {
     setComputedValue(toCurrency(total), 'total');
 
     var AmountPaid = getUserValue('amount-paid');
-    var toPaid = total - AmountPaid;
+    if (AmountPaid === false) {
+      var toPaid = total;
+    } else {
+      var toPaid = total - AmountPaid;
+    }
     setComputedValue(toCurrency(toPaid), 'to-paid');
   }
 
@@ -84,7 +88,7 @@ var bill = (function() {
     context = context || document;
     var element = context.querySelector('[data-cf-editable^="' + name + '"]');
     var value = parseFloat(element.children[0].value);
-    return value;
+    return !isNaN(value) ? value : false;
   }
 
   function setComputedValue(value, role, context) {
