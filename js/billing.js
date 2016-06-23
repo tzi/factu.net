@@ -15,6 +15,7 @@ var bill = (function() {
 
   function update() {
     updateDate();
+    updateDocumentName();
     updateTotal();
   }
 
@@ -29,12 +30,28 @@ var bill = (function() {
 
   function getPaymentDate() {
     var paymentDate = new Date();
-    var days = getUserValue('days');
+    var days = getUserNumberValue('days');
     if (! days) {
       return false;
     }
     paymentDate.setDate(paymentDate.getDate() + days);
     return paymentDate;
+  }
+
+  // DOCUMENT NAME
+  function updateDocumentName() {
+    var title = 'Facture';
+    var number = getUserNumberValue('number');
+    if (number !== false) {
+      title += ' ' + number;
+    }
+
+    var customerName = getUserValue('customer-name');
+    if (customerName) {
+      title += ' ' + customerName;
+    }
+
+    document.title = title;
   }
 
   // BILL CALCULATION
@@ -53,7 +70,7 @@ var bill = (function() {
     var total = totalExVAT + VAT;
     setComputedValue(toCurrency(total), 'total');
 
-    var AmountPaid = getUserValue('amount-paid');
+    var AmountPaid = getUserNumberValue('amount-paid');
     if (AmountPaid === false) {
       var toPaid = total;
     } else {
@@ -63,7 +80,7 @@ var bill = (function() {
   }
 
   function updateVAT(totalExVAT) {
-    var percentVAT = getUserValue('VAT') / 100;
+    var percentVAT = getUserNumberValue('VAT') / 100;
     var VAT = percentVAT * totalExVAT;
     setComputedValue(toCurrency(VAT), 'VAT');
     if (!VAT) {
@@ -75,8 +92,8 @@ var bill = (function() {
   function updateLine(line) {
     var total = false;
     if (!line.classList.contains('cf-disabled') && !line.classList.contains('cf-hidden')) {
-      var quantity = getUserValue('quantity-value', line);
-      var price = getUserValue('unit-price-value', line);
+      var quantity = getUserNumberValue('quantity-value', line);
+      var price = getUserNumberValue('unit-price-value', line);
       total = quantity * price;
     }
     setComputedValue(toCurrency(total), 'line-total', line);
@@ -86,8 +103,12 @@ var bill = (function() {
   // DOM Access
   function getUserValue(name, context) {
     context = context || document;
-    var element = context.querySelector('[data-cf-editable^="' + name + '"]');
-    var value = parseFloat(element.children[0].value);
+    var element = context.querySelector('[name^="' + name + '"]');
+    return element.value;
+  }
+
+  function getUserNumberValue(name, context) {
+    var value = parseFloat(getUserValue(name, context));
     return !isNaN(value) ? value : false;
   }
 
