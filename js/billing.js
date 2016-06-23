@@ -113,7 +113,7 @@ var bill = (function() {
     if (typeof price != 'number' || isNaN(price)) {
       return '';
     }
-    return price + '€';
+    return price + ' €';
   }
 
   function toLongFrenchFormat(date) {
