@@ -36,12 +36,12 @@
     background: white;
 }
 
-.l-page:hover textarea {
+.l-page:hover :not([data-cf-transparent]) > textarea {
     animation: editable 5s;
 }
 
-.l-page textarea:hover,
-.l-page textarea:focus {
+.l-page :not([data-cf-transparent]) > textarea:hover,
+.l-page :not([data-cf-transparent]) > textarea:focus {
     background: #FCF8E3 !important;
 }
 

@@ -22,7 +22,9 @@
 		<div class="l-content">
 			<div class="l-page">
 				<div class="c-header">
-					Facture
+					<div data-cf-transparent data-cf-editable="document-name">
+						Facture
+					</div>
 				</div>
 				<div class="c-identities grid">
 					<div class="cell-6">
@@ -40,9 +42,7 @@
 					</div>
 					<div class="cell-6">
 						<div class="u-info">&#9698; Le client</div>
-						<div data-cf-editable="customer-name" class="u-bold">
-							DUPOND SARL
-						</div>
+						<div data-cf-editable="customer-name" class="u-bold">DUPOND SARL</div>
 						<div data-cf-editable="customer-contact">
 							Service comptabilité<br>
 							45 rue des belles nuits<br>
@@ -51,8 +51,8 @@
 
 						<table class="table-definition">
 							<tr>
-								<th width="50%">N° de Facture</th>
-								<td data-cf-editable="number-value" colspan="2">418</td>
+								<th width="50%">N° de <span data-bill="document-name">Facture</span></th>
+								<td data-cf-editable="document-number" colspan="2">418</td>
 							</tr>
 							<tr data-cf-if="reference-value">
 								<th data-cf-editable="reference-label">N° de commande</th>

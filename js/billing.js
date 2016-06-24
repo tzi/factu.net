@@ -40,18 +40,25 @@ var bill = (function() {
 
   // DOCUMENT NAME
   function updateDocumentName() {
-    var title = 'Facture';
-    var number = getUserNumberValue('number');
-    if (number !== false) {
-      title += ' ' + number;
+    var title = [];
+
+    var documentName = getUserValue('document-name');
+    if (documentName) {
+      title.push(documentName);
+    }
+    setComputedValue(documentName, 'document-name');
+
+    var documentNumber = getUserNumberValue('document-number');
+    if (documentNumber !== false) {
+      title.push(documentNumber);
     }
 
     var customerName = getUserValue('customer-name');
     if (customerName) {
-      title += ' ' + customerName;
+      title.push(customerName);
     }
 
-    document.title = title;
+    document.title = title.join(' ');
   }
 
   // BILL CALCULATION
