@@ -1,4 +1,4 @@
-Factu
+Factu.net
 ========
 
 A tool to generate a bill online.
