@@ -2,12 +2,12 @@
   "name": "Factu",
   "version": "1.0.0",
   "description": "A tool to generate a bill online",
-  "main": "index.html",
-  "dependencies": {
-    "content-formable.js": "^1.0.0"
+  "main": "public/index.html",
+  "devDependencies": {
+    "serve": "^10.1.2"
   },
-  "devDependencies": {},
   "scripts": {
+    "start": "serve public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
