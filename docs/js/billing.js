@@ -1,7 +1,9 @@
 
 contentFormable('billing');
 
-var bill = (function() {
+const bill = (function() {
+  const printButton = document.querySelector('[data-button-print]');
+  const saveButton = document.querySelector('[data-button-save]');
 
   return {
     init: init,
@@ -9,6 +11,7 @@ var bill = (function() {
   };
 
   function init() {
+    initButtons();
     initDate();
     update();
   }
@@ -17,6 +20,15 @@ var bill = (function() {
     updateDate();
     updateDocumentName();
     updateTotal();
+  }
+
+  // BUTTONS
+  function initButtons() {
+    printButton.addEventListener('click', function() {
+      window.print();
+
+      return false;
+    });
   }
 
   // DATE DISPLAY
@@ -155,7 +167,7 @@ var bill = (function() {
 })();
 
 bill.init();
-document.addEventListener('keyup', function(){
+document.addEventListener('keyup', function() {
   bill.update();
 });
 
