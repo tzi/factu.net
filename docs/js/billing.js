@@ -60,6 +60,9 @@ const bill = (function() {
     }
     setComputedValue(documentName, 'document-name');
 
+    const documentNameOf = (isVowel(documentName[0]) ? 'd’' : 'de ') + documentName
+    setComputedValue(documentNameOf, 'document-name-of');
+
     var documentNumber = getUserNumberValue('document-number');
     if (documentNumber !== false) {
       title.push(documentNumber);
@@ -154,6 +157,10 @@ const bill = (function() {
       return '';
     }
     return price + ' €';
+  }
+
+  function isVowel(letter) {
+    return ['a', 'e', 'i', 'o', 'u'].includes(letter.toLowerCase());
   }
 
   function toLongFrenchFormat(date) {
