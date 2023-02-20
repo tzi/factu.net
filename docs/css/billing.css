@@ -98,6 +98,16 @@ td:last-child {
     border-width: 0;
 }
 
+/* BUTTONS */
+
+.button {
+
+}
+
+.button--unactive {
+    color: #555555;
+}
+
 
 /* UTILS */
 .u-bold {

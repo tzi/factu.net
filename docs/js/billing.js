@@ -4,6 +4,7 @@ contentFormable('billing');
 const bill = (function() {
   const printButton = document.querySelector('[data-button-print]');
   const saveButton = document.querySelector('[data-button-save]');
+  let unsavedChanges = false;
 
   return {
     init: init,
@@ -13,13 +14,19 @@ const bill = (function() {
   function init() {
     initButtons();
     initDate();
-    update();
+    updateBill();
   }
 
   function update() {
+    unsavedChanges = true;
+    updateBill();
+  }
+
+  function updateBill() {
     updateDate();
     updateDocumentName();
     updateTotal();
+    updateSaveButton();
   }
 
   // BUTTONS
@@ -29,6 +36,20 @@ const bill = (function() {
 
       return false;
     });
+    saveButton.addEventListener('click', function() {
+      unsavedChanges = false;
+      updateSaveButton();
+    });
+  }
+
+  function updateSaveButton() {
+    if (unsavedChanges) {
+      saveButton.innerHTML = '⭐️ Sauvegarder';
+      saveButton.classList.remove('button--unactive');
+    } else {
+      saveButton.innerHTML = '⭐️ Sauvegardé';
+      saveButton.classList.add('button--unactive');
+    }
   }
 
   // DATE DISPLAY
@@ -174,7 +195,7 @@ const bill = (function() {
 })();
 
 bill.init();
-document.addEventListener('keyup', function() {
+document.forms.billing.addEventListener('keyup', function() {
   bill.update();
 });
 
