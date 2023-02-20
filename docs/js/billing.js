@@ -115,7 +115,7 @@ var bill = (function() {
   }
 
   function getUserNumberValue(name, context) {
-    var value = parseFloat(getUserValue(name, context));
+    var value = parseFloat(getUserValue(name, context).replace(/,/g, '.').replace(/ /g, ''));
     return !isNaN(value) ? value : false;
   }
 
