@@ -40,6 +40,12 @@ const bill = (function() {
       unsavedChanges = false;
       updateSaveButton();
     });
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        saveButton.click();
+      }
+    });
   }
 
   function updateSaveButton() {
