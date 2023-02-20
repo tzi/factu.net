@@ -1,6 +1,8 @@
 
 /* HEADER */
 .l-header {
+    position: sticky;
+    top: 0;
     padding: 1em 0;
     background: #F5F5F5;
     border-bottom: 1px solid #E5E5E5;
@@ -14,6 +16,15 @@
     padding: 0 1em;
     max-width: 21cm;
     margin: 0 auto;
+}
+
+/* BUTTONS */
+.button {
+
+}
+
+.button--unactive {
+    color: #555555;
 }
 
 
