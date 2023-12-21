@@ -183,7 +183,11 @@ const bill = (function() {
     if (typeof price != 'number' || isNaN(price)) {
       return '';
     }
-    return price + ' €';
+    return stripFloatingNumber(price) + ' €';
+  }
+  
+  function stripFloatingNumber(number) {
+    return parseFloat(number.toPrecision(4));
   }
 
   function isVowel(letter) {
