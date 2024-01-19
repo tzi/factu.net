@@ -190,7 +190,7 @@ const bill = (function() {
   }
   
   function stripFloatingNumber(number) {
-    return parseFloat(number.toPrecision(4));
+    return parseFloat(number);
   }
 
   function isVowel(letter) {
