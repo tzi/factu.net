@@ -1,0 +1,21 @@
+window.i18n = (window.i18n || {});
+window.i18n.fr = {
+    terms: 'Termes',
+    provider: 'Prestataire',
+    customer: 'Client',
+    invoice: 'Facture',
+    numberPrefix: 'N° de',
+    numberSuffix: '',
+    order: 'commande',
+    dueDate: 'Délai de paiement',
+    paymentPeriod: 'Délai de paiement',
+    netAmount: 'Net à payer',
+    quantity: 'Quantité',
+    unitPrice: 'Prix unitaire',
+    price: 'Prix',
+    totalExcludingTaxes: 'Total HT',
+    totalIncludingTaxes: 'Total TTC',
+    vatRate: 'Taux de TVA',
+    vat: 'TVA',
+    amountAlreadyPaid: 'Montant déjà réglé',
+}

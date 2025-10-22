@@ -6,16 +6,19 @@
     padding: 1em 0;
     background: #F5F5F5;
     border-bottom: 1px solid #E5E5E5;
-
-    text-align: right;
 }
 
 .l-header__container {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 0 15mm;
     max-width: 21cm;
     margin: 0 auto;
+}
+
+.l-header__settings,
+.l-header__export {
 }
 
 /* BUTTONS */

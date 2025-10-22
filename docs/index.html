@@ -16,20 +16,28 @@
 	<form name="billing">
 		<div class="l-header">
 			<div class="l-header__container">
-				<button type="button" class="button" data-button-print>🖨️ Imprimer</button>
-				<button type="submit" class="button button--unactive" data-button-save>⭐️ Sauvegardé</button>
+				<div class="l-header__settings">
+					<select name="lang" data-select-lang>
+						<option value="fr">🇫🇷 Français</option>
+						<option value="en">🇺🇸 English</option>
+					</select>
+				</div>
+				<div class="l-header__export">
+					<button type="button" class="button" data-button-print>🖨️ Imprimer</button>
+					<button type="submit" class="button button--unactive" data-button-save>⭐️ Sauvegardé</button>
+				</div>
 			</div>
 		</div>
 		<div class="l-content">
 			<div class="l-page">
 				<div class="c-header">
-					<div data-cf-transparent data-cf-editable="document-name">
+					<div data-cf-transparent data-cf-editable="document-name" data-i18n="invoice">
 						Facture
 					</div>
 				</div>
 				<div class="c-identities grid">
 					<div class="cell-6">
-						<div class="u-info">&#9727; Le prestataire</div>
+						<div class="u-info">&#9727; <span data-i18n="provider">Prestataire</span></div>
 						<div data-cf-editable="you-name" class="u-bold">
 							StarBuro
 						</div>
@@ -42,7 +50,7 @@
 						</div>
 					</div>
 					<div class="cell-6">
-						<div class="u-info">&#9698; Le client</div>
+						<div class="u-info">&#9698; <span data-i18n="customer">Client</span></div>
 						<div data-cf-editable="customer-name" class="u-bold">DUPOND SARL</div>
 						<div data-cf-editable="customer-contact">
 							Service comptabilité<br>
@@ -52,11 +60,19 @@
 
 						<table class="table-definition">
 							<tr>
-								<th style="width: 50%;">N° <span data-bill="document-name-of">Facture</span></th>
+								<th style="width: 50%;">
+									<span data-i18n="numberPrefix">N° de</span>
+									<span data-bill="document-name">Facture</span>
+									<span data-i18n="numberSuffix"></span>
+								</th>
 								<td data-cf-editable="document-number" colspan="2">418</td>
 							</tr>
 							<tr data-cf-if="reference-value">
-								<th data-cf-editable="reference-label">N° de commande</th>
+								<th data-cf-editable="reference-label">
+									<span data-i18n="numberPrefix">N°</span>
+									<span data-i18n="order">commande</span>
+									<span data-i18n="numberSuffix"></span>
+								</th>
 								<td data-cf-editable="reference-value" colspan="2"></td>
 							</tr>
 							<tr>
@@ -64,15 +80,15 @@
 								<td data-bill="date" colspan="2">23 septembre 2015</td>
 							</tr>
 							<tr class="bill-setting">
-								<th>Délai de paiement</th>
+								<th data-i18n="paymentPeriod">Délai de paiement</th>
 								<td data-cf-editable="days-value">30 jours</td>
 							</tr>
 							<tr data-cf-if="days-value">
-								<th>Date d'échéance</th>
+								<th data-i18n="dueDate">Date d'échéance</th>
 								<td data-bill="payment">23 octobre 2015</td>
 							</tr>
 							<tr data-cf-if="to-paid-label">
-								<th data-cf-editable="to-paid-label">Net à payer</th>
+								<th data-i18n="netAmount" data-cf-editable="to-paid-label">Net à payer</th>
 								<td data-bill="to-paid" colspan="2"></td>
 							</tr>
 						</table>
@@ -86,9 +102,9 @@
 				<table>
 					<tr>
 						<th width="50%">Prestation</th>
-						<th data-cf-editable="quantity-label">Quantité</th>
-						<th data-cf-editable="unit-price-label">Prix Unitaire</th>
-						<th data-cf-editable="price-label" colspan="2">Prix</th>
+						<th data-cf-editable="quantity-label" data-i18n="quantity">Quantité</th>
+						<th data-cf-editable="unit-price-label" data-i18n="unitPrice">Prix Unitaire</th>
+						<th data-cf-editable="price-label" colspan="2" data-i18n="price">Prix</th>
 					</tr>
 					<tr data-bill="line" data-cf-if="description-value[1]">
 						<td data-cf-editable="description-value[1]">Theière</td>
@@ -124,32 +140,32 @@
 						<td class="bill-empty" rowspan="20"></td>
 					</tr>
 					<tr data-cf-if="VAT">
-						<td class="bill-innerlabel" colspan="2">Total HT</td>
+						<td class="bill-innerlabel" colspan="2" data-i18n="totalExcludingTaxes">Total HT</td>
 						<td data-bill="totalExVAT">35€</td>
 					</tr>
 					<tr data-cf-if="VAT" class="bill-setting">
-						<td class="bill-innerlabel" colspan="2">Taux de TVA</td>
+						<td class="bill-innerlabel" colspan="2" data-i18n="vatRate">Taux de TVA</td>
 						<td data-cf-editable="VAT">20%</td>
 					</tr>
 					<tr data-cf-if="VAT">
-						<td class="bill-innerlabel" colspan="2">TVA</td>
+						<td class="bill-innerlabel" colspan="2" data-i18n="vat">TVA</td>
 						<td data-bill="VAT">35 €</td>
 					</tr>
 					<tr>
-						<td class="bill-innerlabel bill-highlight" colspan="2">Total TTC</td>
+						<td class="bill-innerlabel bill-highlight" colspan="2" data-i18n="totalIncludingTaxes">Total TTC</td>
 						<td data-bill="total" class="bill-highlight">35 €</td>
 					</tr>
 					<tr data-cf-if="amount-paid">
-						<td class="bill-innerlabel" colspan="2" data-cf-editable="already-paid-label">Montant déjà réglé</td>
+						<td class="bill-innerlabel" colspan="2" data-cf-editable="already-paid-label" data-i18n="amountAlreadyPaid">Montant déjà réglé</td>
 						<td data-cf-editable="amount-paid">35 €</td>
 					</tr>
 					<tr data-cf-if="amount-paid">
-						<td class="bill-innerlabel bill-highlight" colspan="2">Net à payer</td>
+						<td class="bill-innerlabel bill-highlight" colspan="2" data-i18n="netAmount">Net à payer</td>
 						<td data-bill="to-paid" class="bill-highlight">35 €</td>
 					</tr>
 				</table>
 				<div class="c-terms" data-cf-if="terms-body">
-					<div class="c-terms__title">Termes</div>
+					<div class="c-terms__title" data-i18n="terms">Termes</div>
 					<div class="c-terms__body" data-cf-editable="terms-body">
 						En conformité avec l’article L 441-6 du Code de commerce :
 						- Tout règlement effectué après la date d'échéance donnera lieu à l'application de pénalités de retard : 40 € forfaitaire plus 1,5% de la facture totale par semaine de retard.
@@ -163,5 +179,7 @@
 	<script src="js/stretchy.js"></script>
 	<script src="js/content-formable.js"></script>
 	<script src="js/billing.js"></script>
+	<script src="js/fr.lang.js"></script>
+	<script src="js/en.lang.js"></script>
 </body>
 </html>

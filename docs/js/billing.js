@@ -2,6 +2,7 @@
 contentFormable('billing');
 
 const bill = (function() {
+  const langSelect = document.querySelector('[data-select-lang]');
   const printButton = document.querySelector('[data-button-print]');
   const saveButton = document.querySelector('[data-button-save]');
   let unsavedChanges = false;
@@ -13,6 +14,7 @@ const bill = (function() {
 
   function init() {
     initButtons();
+    updateI18n();
     initDate();
     updateBill();
   }
@@ -31,6 +33,9 @@ const bill = (function() {
 
   // BUTTONS
   function initButtons() {
+    langSelect.addEventListener('input', function() {
+      updateI18n();
+    });
     printButton.addEventListener('click', function() {
       window.print();
 
@@ -56,6 +61,21 @@ const bill = (function() {
       saveButton.innerHTML = '⭐️ Sauvegardé';
       saveButton.classList.add('button--unactive');
     }
+  }
+
+  // I18N
+  function updateI18n() {
+    const dictionary = (window.i18n || {})[langSelect.value];
+    Array.from(document.querySelectorAll('[data-i18n]')).forEach(function(element) {
+      const key = element.getAttribute('data-i18n');
+      const value = typeof dictionary[key] === 'undefined' ? '🚫 unknown label' : dictionary[key];
+      if (element.firstChild && element.firstChild.tagName === 'TEXTAREA') {
+        element.firstChild.innerHTML = value;
+      } else {
+        element.innerHTML = value;
+      }
+    });
+    updateDocumentName();
   }
 
   // DATE DISPLAY

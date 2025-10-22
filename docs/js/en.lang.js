@@ -1,0 +1,21 @@
+window.i18n = (window.i18n || {});
+window.i18n.en = {
+    terms: 'Terms',
+    provider: 'Provider',
+    customer: 'Customer',
+    invoice: 'Invoice',
+    numberPrefix: '',
+    numberSuffix: 'Number',
+    order: 'commande',
+    dueDate: 'Due date',
+    paymentPeriod: 'Payment period',
+    netAmount: 'Net amount',
+    quantity: 'Quantity',
+    unitPrice: 'Unit price',
+    price: 'Price',
+    totalExcludingTaxes: 'Total excluding taxes',
+    totalIncludingTaxes: 'Total including taxes',
+    vatRate: 'VAT rate',
+    vat: 'VAT',
+    amountAlreadyPaid: 'Amount already paid',
+}
