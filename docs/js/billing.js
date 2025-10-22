@@ -10,11 +10,13 @@ const bill = (function() {
   };
 
   function init() {
+    const params = new URLSearchParams(document.location.search);
+    const lang = params.get('lang') || 'fr';
+    setCurrentLang(lang);
     contentFormable('billing');
     initButtons();
     initDate();
     updateBill();
-    updateI18n();
   }
 
   function update() {
@@ -62,6 +64,11 @@ const bill = (function() {
   }
 
   // I18N
+  function setCurrentLang(lang) {
+    document.forms.billing.lang.value = lang;
+    updateI18n();
+  }
+
   function updateI18n() {
     const dictionary = (window.i18n || {})[langSelect.value] || {};
     Array.from(document.querySelectorAll('[data-i18n]')).forEach(function(element) {
@@ -170,8 +177,15 @@ const bill = (function() {
   // DOM Access
   function getUserValue(name, context) {
     context = context || document;
-    var element = context.querySelector('[name^="' + name + '"]');
-    return element.value;
+    let element = context.querySelector('[name^="' + name + '"]');
+    if (element) {
+      return element.value
+    }
+    element = context.querySelector('[data-cf-editable="' + name + '"]');
+    if (element) {
+      return element.innerHTML;
+    }
+    return '';
   }
 
   function getUserNumberValue(name, context) {
