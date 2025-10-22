@@ -1,6 +1,3 @@
-
-contentFormable('billing');
-
 const bill = (function() {
   const langSelect = document.querySelector('[data-select-lang]');
   const printButton = document.querySelector('[data-button-print]');
@@ -13,10 +10,11 @@ const bill = (function() {
   };
 
   function init() {
+    contentFormable('billing');
     initButtons();
-    updateI18n();
     initDate();
     updateBill();
+    updateI18n();
   }
 
   function update() {
@@ -65,7 +63,7 @@ const bill = (function() {
 
   // I18N
   function updateI18n() {
-    const dictionary = (window.i18n || {})[langSelect.value];
+    const dictionary = (window.i18n || {})[langSelect.value] || {};
     Array.from(document.querySelectorAll('[data-i18n]')).forEach(function(element) {
       const key = element.getAttribute('data-i18n');
       const value = typeof dictionary[key] === 'undefined' ? '🚫 unknown label' : dictionary[key];
